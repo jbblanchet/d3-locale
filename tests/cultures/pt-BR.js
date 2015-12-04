@@ -1,25 +1,25 @@
-﻿var testModules = testModules || {};
+﻿var testModules = testModules || [];
 
 testModules.push({
-  culture: "ru_RU",
+  culture: "pt_BR",
   numberTests: [
     {
       name: "Format float",
       format: ",.2f",
       value: 12345.67,
-      expected: "12 345,67"
+      expected: "12.345,67"
     },
     {
       name: "Format currencies",
       format: "$,.2f",
       value: 12345.67,
-      expected: "12 345,67 руб."
+      expected: "R$12.345,67"
     },
     {
       name: "Format currencies (SI-prefix)",
       format: "$,.4s",
       value: 12345.67,
-      expected: "12,35k руб."
+      expected: "R$12,35k"
     }
   ],
   dateTimeTests: [
@@ -27,19 +27,19 @@ testModules.push({
       name: "Date and time",
       format: "%c",
       value: new Date(1990, 0, 1, 13, 05, 59),
-      expected: "понедельник, 1 января 1990 г. 13:05:59"
+      expected: "segunda-feira, 1 de janeiro 1990 13:05:59"
     },
     {
       name: "Date and time (leading 0)",
       format: "%c",
       value: new Date(1990, 0, 1, 1, 05, 59),
-      expected: "понедельник, 1 января 1990 г. 1:05:59"
+      expected: "segunda-feira, 1 de janeiro 1990 01:05:59"
     },
     {
       name: "Date",
       format: "%x",
       value: new Date(1990, 0, 1, 13, 05, 59),
-      expected: "01.01.1990"
+      expected: "01/01/1990"
     },
     {
       name: "Time",
@@ -51,241 +51,241 @@ testModules.push({
       name: "Weekdays (full) - Monday",
       format: "%A",
       value: new Date(2014, 1, 17, 13, 05, 59),
-      expected: "понедельник"
+      expected: "segunda-feira"
     },
     {
       name: "Weekdays (full) - Tuesday",
       format: "%A",
       value: new Date(2014, 1, 18, 13, 05, 59),
-      expected: "вторник"
+      expected: "terça-feira"
     },
     {
       name: "Weekdays (full) - Wednesday",
       format: "%A",
       value: new Date(2014, 1, 19, 13, 05, 59),
-      expected: "среда"
+      expected: "quarta-feira"
     },
     {
       name: "Weekdays (full) - Thrusday",
       format: "%A",
       value: new Date(2014, 1, 20, 13, 05, 59),
-      expected: "четверг"
+      expected: "quinta-feira"
     },
     {
       name: "Weekdays (full) - Friday",
       format: "%A",
       value: new Date(2014, 1, 21, 13, 05, 59),
-      expected: "пятница"
+      expected: "sexta-feira"
     },
     {
       name: "Weekdays (full) - Saturday",
       format: "%A",
       value: new Date(2014, 1, 22, 13, 05, 59),
-      expected: "суббота"
+      expected: "sábado"
     },
     {
       name: "Weekdays (full) - Sunday",
       format: "%A",
       value: new Date(2014, 1, 23, 13, 05, 59),
-      expected: "воскресенье"
+      expected: "domingo"
     },
     {
       name: "Weekdays (short) - Monday",
       format: "%a",
       value: new Date(2014, 1, 17, 13, 05, 59),
-      expected: "пн"
+      expected: "seg"
     },
     {
       name: "Weekdays (short) - Tuesday",
       format: "%a",
       value: new Date(2014, 1, 18, 13, 05, 59),
-      expected: "вт"
+      expected: "ter"
     },
     {
       name: "Weekdays (short) - Wednesday",
       format: "%a",
       value: new Date(2014, 1, 19, 13, 05, 59),
-      expected: "ср"
+      expected: "qua"
     },
     {
       name: "Weekdays (short) - Thrusday",
       format: "%a",
       value: new Date(2014, 1, 20, 13, 05, 59),
-      expected: "чт"
+      expected: "qui"
     },
     {
       name: "Weekdays (short) - Friday",
       format: "%a",
       value: new Date(2014, 1, 21, 13, 05, 59),
-      expected: "пт"
+      expected: "sex"
     },
     {
       name: "Weekdays (short) - Saturday",
       format: "%a",
       value: new Date(2014, 1, 22, 13, 05, 59),
-      expected: "сб"
+      expected: "sáb"
     },
     {
       name: "Weekdays (short) - Sunday",
       format: "%a",
       value: new Date(2014, 1, 23, 13, 05, 59),
-      expected: "вс"
+      expected: "dom"
     },
     {
       name: "Months (full) - January",
       format: "%B",
       value: new Date(1990, 0, 1, 13, 05, 59),
-      expected: "января"
+      expected: "janeiro"
     },
     {
       name: "Months (full) - February",
       format: "%B",
       value: new Date(1990, 1, 1, 13, 05, 59),
-      expected: "февраля"
+      expected: "fevereiro"
     },
     {
       name: "Months (full) - March",
       format: "%B",
       value: new Date(1990, 2, 1, 13, 05, 59),
-      expected: "марта"
+      expected: "março"
     },
     {
       name: "Months (full) - April",
       format: "%B",
       value: new Date(1990, 3, 1, 13, 05, 59),
-      expected: "апреля"
+      expected: "abril"
     },
     {
       name: "Months (full) - May",
       format: "%B",
       value: new Date(1990, 4, 1, 13, 05, 59),
-      expected: "мая"
+      expected: "maio"
     },
     {
       name: "Months (full) - June",
       format: "%B",
       value: new Date(1990, 5, 1, 13, 05, 59),
-      expected: "июня"
+      expected: "junho"
     },
     {
       name: "Months (full) - July",
       format: "%B",
       value: new Date(1990, 6, 1, 13, 05, 59),
-      expected: "июля"
+      expected: "julho"
     },
     {
       name: "Months (full) - August",
       format: "%B",
       value: new Date(1990, 7, 1, 13, 05, 59),
-      expected: "августа"
+      expected: "agosto"
     },
     {
       name: "Months (full) - September",
       format: "%B",
       value: new Date(1990, 8, 1, 13, 05, 59),
-      expected: "сентября"
+      expected: "setembro"
     },
     {
       name: "Months (full) - October",
       format: "%B",
       value: new Date(1990, 9, 1, 13, 05, 59),
-      expected: "октября"
+      expected: "outubro"
     },
     {
       name: "Months (full) - November",
       format: "%B",
       value: new Date(1990, 10, 1, 13, 05, 59),
-      expected: "ноября"
+      expected: "novembro"
     },
     {
       name: "Months (full) - December",
       format: "%B",
       value: new Date(1990, 11, 1, 13, 05, 59),
-      expected: "декабря"
+      expected: "dezembro"
     },
     {
       name: "Months (short) - January",
       format: "%b",
       value: new Date(1990, 0, 1, 13, 05, 59),
-      expected: "янв"
+      expected: "jan"
     },
     {
       name: "Months (short) - February",
       format: "%b",
       value: new Date(1990, 1, 1, 13, 05, 59),
-      expected: "фев"
+      expected: "fev"
     },
     {
       name: "Months (short) - March",
       format: "%b",
       value: new Date(1990, 2, 1, 13, 05, 59),
-      expected: "мар"
+      expected: "mar"
     },
     {
       name: "Months (short) - April",
       format: "%b",
       value: new Date(1990, 3, 1, 13, 05, 59),
-      expected: "апр"
+      expected: "abr"
     },
     {
       name: "Months (short) - May",
       format: "%b",
       value: new Date(1990, 4, 1, 13, 05, 59),
-      expected: "май"
+      expected: "mai"
     },
     {
       name: "Months (short) - June",
       format: "%b",
       value: new Date(1990, 5, 1, 13, 05, 59),
-      expected: "июн"
+      expected: "jun"
     },
     {
       name: "Months (short) - July",
       format: "%b",
       value: new Date(1990, 6, 1, 13, 05, 59),
-      expected: "июл"
+      expected: "jul"
     },
     {
       name: "Months (short) - August",
       format: "%b",
       value: new Date(1990, 7, 1, 13, 05, 59),
-      expected: "авг"
+      expected: "ago"
     },
     {
       name: "Months (short) - September",
       format: "%b",
       value: new Date(1990, 8, 1, 13, 05, 59),
-      expected: "сен"
+      expected: "set"
     },
     {
       name: "Months (short) - October",
       format: "%b",
       value: new Date(1990, 9, 1, 13, 05, 59),
-      expected: "окт"
+      expected: "out"
     },
     {
       name: "Months (short) - November",
       format: "%b",
       value: new Date(1990, 10, 1, 13, 05, 59),
-      expected: "ноя"
+      expected: "nov"
     },
     {
       name: "Months (short) - December",
       format: "%b",
       value: new Date(1990, 11, 1, 13, 05, 59),
-      expected: "дек"
+      expected: "dez"
     },
     {
-      name: "AM",
+      name: "No time suffix - AM",
       format: "%p",
       value: new Date(1990, 0, 1, 11, 05, 59),
       expected: ""
     },
     {
-      name: "PM",
+      name: "No time suffix - PM",
       format: "%p",
       value: new Date(1990, 0, 1, 13, 05, 59),
       expected: ""
-    },
+    }
   ]
 });
